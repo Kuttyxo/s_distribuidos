@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:5.0
+    container_name: mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - mongodb_data:/data/db
+    ports:
+      - "27017:27017"
+    healthcheck:
+      test: ["CMD", "mongo", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  scraper:
+    build: ./scraper
+    container_name: waze_scraper
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    environment:
+      MONGO_URI: "mongodb://root:example@mongodb:27017/traffic_data?authSource=admin"
+      SCRAPER_INTERVAL_MINUTES: "5"
+    volumes:
+      - ./scraper:/app
+    restart: unless-stopped
+
+  storage:  # ¡Este servicio debe estar indentado al mismo nivel que los demás!
+    build: ./storage
+    environment:
+      MONGO_URI: "mongodb://root:example@mongodb:27017/traffic_data?authSource=admin"
+    ports:
+      - "5001:5001"
+    depends_on:
+      mongodb:
+        condition: service_healthy
+
+volumes:
+  mongodb_data:
