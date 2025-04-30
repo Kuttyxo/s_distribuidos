@@ -1,0 +1,80 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:5.0
+    container_name: mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - mongodb_data:/data/db
+    ports:
+      - "27017:27017"
+    healthcheck:
+      test: ["CMD", "mongo", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  scraper:
+    build: ./scraper
+    container_name: waze_scraper
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    environment:
+      MONGO_URI: "mongodb://root:example@mongodb:27017/traffic_data?authSource=admin"
+      SCRAPER_INTERVAL_MINUTES: "1"
+    volumes:
+      - ./scraper:/app
+    restart: unless-stopped
+
+  storage:
+    build: ./storage
+    environment:
+      MONGO_URI: "mongodb://root:example@mongodb:27017/traffic_data?authSource=admin"
+    ports:
+      - "5001:5001"
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/events/count"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  cache:
+    build: ./cache
+    container_name: traffic_cache
+    environment:
+      UNIFORM_CACHE_BYTES: ${UNIFORM_CACHE_BYTES}
+      NORMAL_CACHE_BYTES: ${NORMAL_CACHE_BYTES}
+    ports:
+      - "5002:5002"
+    depends_on:
+      - storage
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5002/cache/stats"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  generator:
+    build: ./generator
+    container_name: traffic_generator
+    environment:
+      STORAGE_SERVICE_URL: "http://storage:5001"
+      CACHE_SERVICE_URL: "http://cache:5002"
+      UNIFORM_LOW: "1.0"
+      UNIFORM_HIGH: "3.0"
+      NORMAL_MEAN: "2.0"
+      NORMAL_STD_DEV: "0.5"
+    depends_on:
+      - cache
+      - storage
+    restart: unless-stopped
+
+volumes:
+  mongodb_data:
