@@ -73,8 +73,14 @@ Requisitos
 
 
 ## Uso
-ENDPOINTS CLAVE
+PARA CONSTRUIR CONTENEDORES
+docker-compose build
 
+PARA LEVANTAR CONTENEDORES
+docker-compose up -d
+
+
+ENDPOINTS CLAVE
 Storage--> /events/random --> GET ---> Evento aleatorio
 Cache--> /cache/stats --> GET ---> Estadísticas de caché
 Generator--> /metrics --> GET ---> Métricas de generacion
