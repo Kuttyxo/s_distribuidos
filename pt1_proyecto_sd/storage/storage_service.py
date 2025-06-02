@@ -57,31 +57,6 @@ def events_by_type(event_type):
     except Exception as e:
         logger.error(f"Error getting events by type: {e}")
         return jsonify({"error": str(e)}), 500
-    
-@app.route('/events/export', methods=['GET'])
-def export_events():
-    try:
-        events = list(storage.collection.find({}, {'_id': 0}))
-        
-        # Convertir formatos para Pig
-        formatted_events = []
-        for event in events:
-            formatted = {
-                'id': event.get('id', ''),
-                'event_type': event.get('event_type', ''),
-                'subtype': event.get('subtype', ''),
-                'street': event.get('street', ''),
-                'city': event.get('city', ''),
-                'x': event.get('location', {}).get('coordinates', [0,0])[0],
-                'y': event.get('location', {}).get('coordinates', [0,0])[1],
-                'timestamp': event.get('timestamp', datetime.now()).isoformat()
-            }
-            formatted_events.append(formatted)
-        
-        return jsonify(formatted_events)
-    except Exception as e:
-        logger.error(f"Export error: {e}")
-        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001)
