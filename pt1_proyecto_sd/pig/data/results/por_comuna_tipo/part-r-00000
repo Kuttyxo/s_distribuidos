@@ -1,0 +1,189 @@
+macul,jam,51
+macul,hazard,33
+macul,police,21
+macul,accident,5
+macul,chit_chat,12
+renca,jam,38
+renca,hazard,33
+renca,police,30
+renca,accident,4
+renca,chit_chat,10
+renca,road_closed,4
+comuna,event_type,1
+maipú,jam,98
+maipú,hazard,124
+maipú,police,85
+maipú,accident,8
+maipú,chit_chat,15
+maipú,road_closed,8
+ñuñoa,jam,111
+ñuñoa,hazard,67
+ñuñoa,police,56
+ñuñoa,accident,11
+ñuñoa,chit_chat,18
+ñuñoa,road_closed,4
+bollenar,hazard,1
+la reina,jam,90
+la reina,hazard,25
+la reina,police,35
+la reina,accident,4
+la reina,chit_chat,8
+lo prado,jam,13
+lo prado,hazard,12
+lo prado,police,20
+lo prado,accident,2
+lo prado,chit_chat,6
+peralito,hazard,2
+pudahuel,jam,36
+pudahuel,hazard,36
+pudahuel,police,50
+pudahuel,accident,6
+pudahuel,chit_chat,11
+pudahuel,road_closed,8
+recoleta,jam,28
+recoleta,hazard,26
+recoleta,police,39
+recoleta,accident,2
+recoleta,chit_chat,8
+recoleta,road_closed,2
+santiago,jam,166
+santiago,hazard,109
+santiago,police,170
+santiago,accident,9
+santiago,chit_chat,84
+santiago,road_closed,4
+vitacura,jam,84
+vitacura,hazard,39
+vitacura,police,34
+vitacura,accident,8
+vitacura,chit_chat,6
+cerrillos,jam,26
+cerrillos,hazard,21
+cerrillos,police,30
+cerrillos,accident,7
+cerrillos,chit_chat,5
+conchalí,jam,24
+conchalí,hazard,20
+conchalí,police,22
+conchalí,accident,2
+conchalí,chit_chat,7
+conchalí,road_closed,9
+curacaví,hazard,3
+curacaví,police,4
+curacaví,chit_chat,1
+el bosque,jam,4
+el bosque,hazard,3
+el bosque,police,3
+el bosque,road_closed,2
+la granja,jam,32
+la granja,hazard,17
+la granja,police,24
+la granja,accident,2
+la granja,chit_chat,5
+lo espejo,jam,17
+lo espejo,hazard,16
+lo espejo,police,16
+lo espejo,accident,1
+lo espejo,chit_chat,4
+lo espejo,road_closed,1
+peñaflor,jam,2
+peñaflor,hazard,1
+peñaflor,police,4
+quilicura,jam,56
+quilicura,hazard,28
+quilicura,police,40
+quilicura,accident,6
+quilicura,chit_chat,7
+quilicura,road_closed,2
+huechuraba,jam,27
+huechuraba,hazard,21
+huechuraba,police,13
+huechuraba,accident,4
+huechuraba,chit_chat,4
+huechuraba,road_closed,1
+la florida,jam,87
+la florida,hazard,70
+la florida,police,83
+la florida,accident,13
+la florida,chit_chat,29
+la florida,road_closed,12
+las condes,jam,233
+las condes,hazard,96
+las condes,police,92
+las condes,accident,21
+las condes,chit_chat,30
+las condes,road_closed,4
+san miguel,jam,42
+san miguel,hazard,44
+san miguel,police,35
+san miguel,accident,3
+san miguel,chit_chat,13
+san miguel,road_closed,2
+san ramón,jam,9
+san ramón,hazard,8
+san ramón,police,15
+san ramón,accident,2
+san ramón,chit_chat,4
+cerro navia,jam,10
+cerro navia,hazard,9
+cerro navia,police,19
+cerro navia,chit_chat,4
+cerro navia,road_closed,2
+la cisterna,jam,32
+la cisterna,hazard,27
+la cisterna,police,24
+la cisterna,accident,3
+la cisterna,chit_chat,4
+la cisterna,road_closed,5
+peñalolén,jam,64
+peñalolén,hazard,68
+peñalolén,police,61
+peñalolén,accident,8
+peñalolén,chit_chat,9
+peñalolén,road_closed,13
+providencia,jam,131
+providencia,hazard,62
+providencia,police,58
+providencia,accident,9
+providencia,chit_chat,23
+providencia,road_closed,10
+puente alto,jam,1
+lo barnechea,jam,44
+lo barnechea,hazard,21
+lo barnechea,police,16
+lo barnechea,accident,2
+lo barnechea,chit_chat,3
+maría pinto,jam,1
+maría pinto,police,1
+san bernardo,jam,5
+san bernardo,hazard,4
+san joaquín,jam,20
+san joaquín,hazard,29
+san joaquín,police,30
+san joaquín,accident,1
+san joaquín,chit_chat,6
+san joaquín,road_closed,2
+independencia,jam,24
+independencia,hazard,34
+independencia,police,31
+independencia,accident,3
+independencia,chit_chat,9
+quinta normal,jam,23
+quinta normal,hazard,27
+quinta normal,police,29
+quinta normal,accident,3
+quinta normal,chit_chat,10
+quinta normal,road_closed,3
+estación central,jam,42
+estación central,hazard,49
+estación central,police,61
+estación central,accident,6
+estación central,chit_chat,34
+estación central,road_closed,3
+pedro aguirre cerda,jam,18
+pedro aguirre cerda,hazard,21
+pedro aguirre cerda,police,25
+pedro aguirre cerda,accident,5
+pedro aguirre cerda,chit_chat,5
+pedro aguirre cerda,road_closed,1
+miraflores de curacaví,police,1
